@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "type": "正确回答",
+    "name": "today 命令输出任务列表",
+    "input": "python cli.py today",
+    "expect": "输出包含 5 个文件名：spec.md、plan.md、tasks.md、README.md、ai-log.md",
+    "status": "PASS"
+  },
+  {
+    "id": 2,
+    "type": "正确回答",
+    "name": "submit 正常提交",
+    "input": "python cli.py submit spec.md",
+    "expect": "输出 '✅ spec.md 已提交'",
+    "status": "PASS"
+  },
+  {
+    "id": 3,
+    "type": "正确回答",
+    "name": "check 列出未提交文件",
+    "input": "python cli.py check",
+    "expect": "输出包含 '未提交的文件'，列出剩余未提交文件",
+    "status": "PASS"
+  },
+  {
+    "id": 4,
+    "type": "正确回答",
+    "name": "submit 重复提交",
+    "input": "python cli.py submit spec.md",
+    "expect": "输出 'ℹ️  spec.md 已提交过'",
+    "status": "PASS"
+  },
+  {
+    "id": 5,
+    "type": "正确回答",
+    "name": "submit 不存在的文件",
+    "input": "python cli.py submit fake.txt",
+    "expect": "输出 '❌ fake.txt 不在任务清单中'",
+    "status": "PASS"
+  },
+  {
+    "id": 6,
+    "type": "正确回答",
+    "name": "check 全部完成",
+    "input": "python cli.py check（全部提交后）",
+    "expect": "输出 '🎉 全部完成！'",
+    "status": "PASS"
+  },
+  {
+    "id": 7,
+    "type": "工具失败",
+    "name": "status.json 损坏",
+    "input": "将 status.json 内容改为非法 JSON，然后运行 python cli.py today",
+    "expect": "输出 '⚠️  status.json 文件损坏，已重新初始化'，并正常显示任务列表",
+    "status": "PASS"
+  },
+  {
+    "id": 8,
+    "type": "工具失败",
+    "name": "status.json 不存在",
+    "input": "删除 status.json，然后运行 python cli.py today",
+    "expect": "自动创建 status.json（全 false），并正常显示任务列表",
+    "status": "PASS"
+  },
+  {
+    "id": 9,
+    "type": "范围外拒答",
+    "name": "编辑任务列表",
+    "input": "添加一个新任务：写单元测试",
+    "expect": "输出 '本工具只支持查看和提交，不支持编辑任务列表'",
+    "status": "PASS"
+  },
+  {
+    "id": 10,
+    "type": "范围外拒答",
+    "name": "查看提交历史",
+    "input": "查看提交历史",
+    "expect": "输出 '本工具不记录历史，只显示当前状态'",
+    "status": "PASS"
+  },
+  {
+    "id": 11,
+    "type": "范围外拒答",
+    "name": "团队协作",
+    "input": "帮我看看团队其他人的进度",
+    "expect": "输出 '本工具为单用户设计，不支持团队协作'",
+    "status": "PASS"
+  },
+  {
+    "id": 12,
+    "type": "范围外拒答",
+    "name": "非 Day2 问题",
+    "input": "今天天气怎么样",
+    "expect": "输出 '我是 Day2 学习任务清单助手，只处理 Day2 任务相关请求'",
+    "status": "PASS"
+  }
+]

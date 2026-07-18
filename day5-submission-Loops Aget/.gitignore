@@ -1,0 +1,55 @@
+# Python libraries and venv
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+*.env
+!.env.example
+
+# Local agent/tool state
+.agents/
+.claude/
+.superpowers/
+.remember/
+skills-lock.json
+
+# Large ML models and checkpoints
+*.pth
+*.pt
+*.bin
+*.onnx
+*.safetensors
+models/
+
+# Logs and transient data
+*.log
+*.pid
+uploads/
+dist/
+build/
+coverage/
+.pytest_cache/
+
+# Generated local evidence
+*_results.txt
+test_output.txt
+install_*.txt
+lint.txt
+lint.json
+out.txt
+clip_install.txt
+
+# OS files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+Thumbs.db

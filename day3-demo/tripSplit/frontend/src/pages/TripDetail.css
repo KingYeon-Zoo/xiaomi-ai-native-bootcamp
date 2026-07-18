@@ -1,0 +1,121 @@
+.trip-detail-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.trip-detail-page header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.trip-detail-page header h1 {
+  flex: 1;
+  font-size: 24px;
+}
+
+.detail-content {
+  display: flex;
+  gap: 24px;
+}
+
+.members-section {
+  width: 280px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e5e5e5;
+}
+
+.members-section h3 {
+  margin-bottom: 12px;
+}
+
+.member-list {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.member-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.expenses-section {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e5e5e5;
+}
+
+.expenses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+}
+
+.expense-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.expense-name {
+  font-weight: 600;
+}
+
+.expense-amount {
+  color: #e67e22;
+  font-weight: 600;
+}
+
+.expense-payer,
+.expense-category,
+.expense-date {
+  color: #888;
+  font-size: 13px;
+}
+
+.expense-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.expense-actions button {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.settlement-section {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e5e5e5;
+}
+
+.settlement-section > button {
+  margin-bottom: 16px;
+}

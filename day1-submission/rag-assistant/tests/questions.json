@@ -1,0 +1,96 @@
+[
+  {
+    "category": "正确匹配",
+    "question": "Day1要交什么？",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["spec", "design", "ai-log", "6类", "证据"],
+    "expected_source": "[faq-02]"
+  },
+  {
+    "category": "正确匹配",
+    "question": "什么是可复核交付？",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["可复核", "助教", "独立判断", "证据"],
+    "expected_source": "[faq-01]"
+  },
+  {
+    "category": "正确匹配",
+    "question": "ai-log的五字段是什么？",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["目的", "输入", "建议", "人工判断", "验证"],
+    "expected_source": "[faq-03]"
+  },
+  {
+    "category": "跨段落",
+    "question": "Spec中的非目标和AI过度设计有什么关系？",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["非目标", "过度设计", "数据库", "Web UI"],
+    "expected_sources": ["[faq-04]", "[faq-10]"]
+  },
+  {
+    "category": "跨段落",
+    "question": "证据包和工具链有什么关系？",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["证据", "工具链", "提交", "检查"],
+    "expected_sources": ["[faq-02]", "[faq-06]"]
+  },
+  {
+    "category": "资料外",
+    "question": "奖学金政策是什么？",
+    "expected_type": "refuse",
+    "expected_keywords": ["资料中没有找到依据"],
+    "expected_source": null
+  },
+  {
+    "category": "资料外",
+    "question": "今天中午吃什么？",
+    "expected_type": "refuse",
+    "expected_keywords": ["资料中没有找到依据"],
+    "expected_source": null
+  },
+  {
+    "category": "混淆",
+    "question": "说一个Day1没有教的内容",
+    "expected_type": "refuse_or_handle",
+    "expected_keywords": ["资料中没有找到依据"],
+    "expected_source": null
+  },
+  {
+    "category": "混淆",
+    "question": "RAG除了关键词检索还有什么检索方式？",
+    "expected_type": "refuse_or_handle",
+    "expected_keywords": ["资料中没有找到依据"],
+    "expected_source": null
+  },
+  {
+    "category": "空输入",
+    "question": "",
+    "expected_type": "prompt_input",
+    "expected_keywords": ["请输入您的问题"],
+    "expected_source": null
+  },
+  {
+    "category": "边界",
+    "question": "这是一段超过两百个字符的超长问题用于测试系统的截断处理能力，当用户输入的问题长度超过设定的阈值时系统应该在入口层将其截断至指定长度后继续处理而不是报错或拒绝服务，这个行为需要被自动化测试覆盖以确保系统的健壮性和用户体验的一致性，这是一个非常重要的边界条件需要被验证，所以我们需要确保代码中正确实现了截断逻辑，并且截断后的输入仍然能够被正常处理并返回合理的检索结果，同时不能因为输入过长而导致程序崩溃或者性能严重下降",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["可复核", "交付", "资料"],
+    "expected_source": null,
+    "note": "验证超长输入（200+字符）被截断后不报错，能正常返回结果"
+  },
+  {
+    "category": "边界",
+    "question": "的是了什么怎么",
+    "expected_type": "refuse",
+    "expected_keywords": ["资料中没有找到依据"],
+    "expected_source": null,
+    "note": "验证纯停用词输入被过滤后无有效关键词，触发零命中拒答"
+  },
+  {
+    "category": "正确匹配",
+    "question": "什么是RAG？",
+    "expected_type": "answer_with_source",
+    "expected_keywords": ["检索", "增强", "生成"],
+    "expected_source": "[faq-05]",
+    "note": "验证来源格式 [faq-XX] 正确输出，同时覆盖 faq-05"
+  }
+]

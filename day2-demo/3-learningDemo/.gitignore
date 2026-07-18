@@ -1,0 +1,26 @@
+# 虚拟环境
+.venv/
+venv/
+ENV/
+
+# 环境变量（包含 API Key）
+.env
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 测试缓存
+.pytest_cache/
+.coverage
+htmlcov/

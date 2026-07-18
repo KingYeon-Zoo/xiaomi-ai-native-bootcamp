@@ -1,0 +1,4 @@
+interface:
+  display_name: "Day 5 团队项目全流程"
+  short_description: "按 Day 5 规范开发、逆向补证并重构团队项目交付"
+  default_prompt: "使用 $day5-team-project 审计当前项目，并按真实证据补齐 Day 5 全流程交付。"

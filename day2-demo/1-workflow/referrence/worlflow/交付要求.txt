@@ -1,0 +1,8 @@
+最低要求（6 项全要写到）：
+
+写清输入字段：project_dir、required_files、test_command
+写清两个工具：checkFiles()、runTests() 都要有功能、输入、输出
+写清三个状态：PASS、WARNING、BLOCKED，每个有含义和下一步
+写一个判断表：条件 → 状态 → 下一步，至少 3 行
+至少写 2 个失败兜底：每个有具体处理（例：缺文件、测试失败、测试超时）
+写清证据：每个判断的证据记在哪个文件里

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">LOOPS 标志</title>
+  <desc id="desc">盾牌中的紫青渐变无限环，代表持续审核与可恢复判断链。</desc>
+  <defs>
+    <linearGradient id="shield" x1="20" y1="16" x2="140" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="loop" x1="42" y1="80" x2="118" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4B5FD"/>
+      <stop offset=".5" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path fill="#090B1A" d="M80 6 143 31v44c0 38-23 65-63 79C40 140 17 113 17 75V31L80 6Z"/>
+  <path fill="none" stroke="url(#shield)" stroke-width="7" stroke-linejoin="round" d="M80 12 136 35v40c0 33-19 57-56 71-37-14-56-38-56-71V35L80 12Z"/>
+  <path fill="none" stroke="url(#loop)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" d="M42 80c11-22 27-22 38 0s27 22 38 0M42 80c11 22 27 22 38 0s27-22 38 0"/>
+  <circle cx="42" cy="80" r="5" fill="#A78BFA"/>
+  <circle cx="118" cy="80" r="5" fill="#22D3EE"/>
+</svg>

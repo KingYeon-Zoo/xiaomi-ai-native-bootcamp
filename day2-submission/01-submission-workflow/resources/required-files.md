@@ -1,0 +1,1 @@
+../../docs/01-submission-workflow/resources/required-files.md

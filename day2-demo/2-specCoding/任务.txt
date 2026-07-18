@@ -1,0 +1,104 @@
+学生练习：SPEC-KIT HELLO WORLD
+
+任务：为“DAY2 学习任务清单助手”写出三件套
+
+这是一个命令行工具，帮助学生管理 Day2 的学习任务：
+
+命令	输入	输出
+today	无	返回 Day2 任务列表
+submit <文件名>	文件名（如 README.md）	标记该文件已提交
+check	无	返回尚未提交的文件清单
+
+非目标和边界条件由你自己决定——这就是 Spec Coding 的重点。
+
+步骤	动作	产出
+Step 1	写 spec.md（目标、非目标、边界、验收）	spec.md
+Step 2	写 plan.md（模块、数据结构、风险）	plan.md
+Step 3	写 tasks.md（每步有产出和验收）	tasks.md
+Step 4	写 AGENTS.md（4 块：命令/何时调/范围外/出错）	AGENTS.md
+Step 5	把 4 份文件交给 Coding Agent，让它按 tasks.md 实现 cli.py	cli.py
+
+作业要求
+
+提交：spec.md / plan.md / tasks.md / AGENTS.md / cli.py
+
+为 “Day2 学习任务清单助手”（today / submit / check 三个命令）编写
+
+每个文件必须包含的内容：
+
+文件	必须包含	最低要求
+spec.md	目标（3 个命令的输入输出）
+非目标（明确不做的事）
+边界条件（异常情况处理）
+验收标准（运行什么命令、期望什么结果）	① spec.md：非目标 ≥2 条，边界 ≥2 条，验收 ≥2 条
+plan.md	模块划分、数据结构、风险	② plan.md：模块 ≥2 个，风险 ≥1 个
+tasks.md	每步任务、产出、验收方式	③ tasks.md：步骤 ≥3 步，每步有验收
+AGENTS.md	能调用的命令清单
+用户怎么说时调什么命令
+范围外拒答 + 工具失败处理	④ AGENTS.md：4 块齐全（命令 / 何时调 / 范围外 ≥1 类 / 工具失败 ≥1 类）
+cli.py	由 Coding Agent 按 tasks.md 实现	⑤ cli.py：3 个命令正常路径都能跑通
+
+
+
+作业要求
+
+提交文件：eval-cases.json / test-record.md
+
+为 Day2 学习任务清单助手（AGENT.md + cli.py）编写
+
+文件	必须包含	最低要求
+eval-cases.json	测试用例数组，每条有 type/input/expect
+类型：正确回答 / 范围外拒答 / 工具失败
+运行后填入 status（PASS/FAIL）	① eval-cases.json：至少 5 条用例，3 类必测全覆盖（正确回答 ≥2、范围外拒答 ≥1、工具失败 ≥1）
+② JSON 语法合法（双引号嵌套用单引号或转义）
+③ expect 写成可验证的预期输出（如“调 today 输出任务列表 + 状态”），不要只写“正确回答”
+test-record.md	测试结果表 + 失败分析（定位 AGENT.md vs cli.py）+ 下一步	④ test-record.md：每条用例有实际输出 + PASS/FAIL
+⑤ 至少 1 条 FAIL 有失败定位（AGENT.md 漏规则 / cli.py 没实现）和修复方向
+⑥ 加分项：写 1 条引用来源用例（可选，第 7 节升级 RAG 后必测）
+
+⚠️ 注意
+失败分析必须能区分“是 AGENT.md 没写好，还是 cli.py 没实现好”。
+
+Eval 是“用样例集评估 AI 应用的行为”——不只测正常路径，还要测 AI 特有风险：
+
+类型	含义
+✅ 正确回答	用户的正常请求 → AGENT 调对命令 → 结果对
+🚫 范围外拒答	不该答的不答，不调用不存在的命令
+💥 工具失败	cli.py 报错时，AGENT 转译为人话，不展示堆栈
+
+
+学生练习：整理上下文包
+
+任务：为 DAY2 学习任务清单助手整理 CONTEXT-PACK.md
+
+基于你之前写的 spec.md / plan.md，按 7 层整理上下文。
+
+步骤	动作	产出
+Step 1	写目标和非目标	context-pack.md ①② 层
+Step 2	整理资料和代码（删除过期内容）	context-pack.md ③④ 层
+Step 3	写约束和输出格式	context-pack.md ⑥⑦ 层
+Step 4	用整理好的上下文让 AI 评审 spec.md	AI 输出结果
+
+⚠️ 注意
+每完成一步就保存。不要等最后统一补。
+
+
+作业要求
+
+提交文件：context-pack.md
+
+为 Day2 学习任务清单助手整理上下文包。
+
+层	必须包含	最低要求
+① 目标	这次要做什么	7 层至少写 5 层；其中目标 / 非目标 / 资料 / 约束 / 输出格式必须有
+② 非目标	这次不做什么	资料中不能有过期 / 冲突内容
+③ 资料	相关文档内容	约束至少 2 条
+④ 代码	相关代码片段（可选）	输出格式有具体字段定义
+⑤ 日志	错误日志（可选）	
+⑥ 约束	禁止事项	
+⑦ 输出格式	期望的输出结构	
+
+⚠️ 注意
+不要只粘贴 AI 的回答。必须有你自己的判断和取舍。
+
+💡 保存好 context-pack.md，Day4 看 AI 协作质量和输出稳定性。

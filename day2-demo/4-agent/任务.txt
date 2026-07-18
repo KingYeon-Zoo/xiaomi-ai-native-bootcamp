@@ -1,0 +1,44 @@
+学生练习：设计 AGENT（15 分钟）
+
+任务：设计训练营助教 AGENT
+
+RAG 查课程资料 + 工具查文件缺失 + 结果校验
+
+步骤	动作	产出
+Step 1	画数据流（User → Router → RAG/Tool → Validator → Answer）	agent-design.md 架构图
+Step 2	定义工具 schema（输入/输出/失败/边界）	agent-design.md 工具定义
+Step 3	写校验规则 + 测试用例	agent-design.md 校验+测试
+
+⚠️ 注意
+每个工具必须定义边界和失败处理。不要只写 happy path。
+
+
+AI 代码必须检查的 6 类风险
+
+| 风险             | 例子                                             | 不查会怎样               |
+| -------------- | ---------------------------------------------- | ------------------- |
+| 幻觉 API         | `import { magicRag } from "imaginary_rag_sdk"` | 运行直接报错，模块不存在        |
+| 硬编码密钥          | `const API_KEY = "sk-demo-key"`                | 密钥泄露，账号被盗           |
+| 任意文件读取         | `fs.readFileSync(req.body.path)`               | 攻击者可读 `/etc/passwd` |
+| 资料外编造          | 检索为空仍输出“根据资料...”                               | 用户被骗，信任崩塌           |
+| 吞掉错误           | `catch(e) {}`                                  | 出了问题不知道，无法排查        |
+| 只覆盖 happy path | Demo 成功一次就过                                    | 异常情况直接崩溃            |
+
+
+
+学生练习：审查 AI 生成代码（15 分钟）
+
+任务：审查一份 AI 生成的代码
+
+用 6 类风险清单逐项检查，写出 review-checklist.md
+
+| 步骤     | 动作                           | 产出                  |
+| ------ | ---------------------------- | ------------------- |
+| Step 1 | 逐项标注风险（幻觉 SDK、硬编码密钥、任意读取...） | 风险清单                |
+| Step 2 | 每个风险写位置 + 影响 + 修复 + 测试       | finding 表           |
+| Step 3 | 写审查结论（PASS/WARNING/BLOCKED）  | review-checklist.md |
+
+⚠️ 注意
+每个风险必须有位置、影响、修复、测试四要素。不能只说“有问题”。
+
+

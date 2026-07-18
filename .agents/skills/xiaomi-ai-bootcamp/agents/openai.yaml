@@ -1,0 +1,4 @@
+interface:
+  display_name: "小米 AI 训练营开发范式"
+  short_description: "按小米训练营规范将全部开发过程文档收口到项目docs目录"
+  default_prompt: "使用 $xiaomi-ai-bootcamp 在项目 docs 目录内按小米训练营范式规划、开发并审计当前项目。"

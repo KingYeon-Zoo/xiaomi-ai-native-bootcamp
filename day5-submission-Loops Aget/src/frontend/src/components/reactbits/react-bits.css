@@ -1,0 +1,81 @@
+.rb-aurora,
+.rb-particles {
+  width: 100%;
+  height: 100%;
+}
+
+.rb-aurora canvas,
+.rb-particles canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.rb-spotlight {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(124, 58, 237, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+.rb-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(520px circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 62%);
+  opacity: 0;
+  transition: opacity 240ms ease;
+  pointer-events: none;
+}
+
+.rb-spotlight:hover::before,
+.rb-spotlight:focus-within::before {
+  opacity: 1;
+}
+
+.rb-spotlight > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rb-border-glow {
+  position: relative;
+  border-radius: 20px;
+  padding: 1px;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--glow-accent) 52%, transparent), rgba(148, 163, 184, 0.12) 45%, color-mix(in srgb, var(--glow-accent) 28%, transparent));
+}
+
+.rb-border-glow::before {
+  content: "";
+  position: absolute;
+  width: 55%;
+  aspect-ratio: 1;
+  left: -25%;
+  top: -65%;
+  background: var(--glow-accent);
+  filter: blur(48px);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.rb-border-glow-danger::before {
+  left: auto;
+  right: -25%;
+}
+
+.rb-border-glow-inner {
+  height: 100%;
+  border-radius: 19px;
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-spotlight::before {
+    display: none;
+  }
+}

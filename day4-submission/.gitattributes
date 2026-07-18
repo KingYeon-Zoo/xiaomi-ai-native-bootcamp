@@ -1,0 +1,5 @@
+# 原始邮件正文保留换行和尾随空格；关闭文本 diff，避免 Git 将数据内容误作代码风格问题。
+project2/outputs/cleaned_data.csv -diff -text
+
+# 生成图表按二进制处理。
+*.png binary

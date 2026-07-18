@@ -1,0 +1,1 @@
+../docs/02-task-assistant/AGENTS.md

@@ -1,0 +1,40 @@
+.trip-list-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.trip-list-page header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.trip-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.trip-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.trip-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.trip-card h3 {
+  margin-bottom: 8px;
+}
+
+.trip-card p {
+  color: #666;
+  font-size: 14px;
+}

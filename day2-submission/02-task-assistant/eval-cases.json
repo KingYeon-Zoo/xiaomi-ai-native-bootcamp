@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "type": "正确回答",
+    "input": "今天要做什么？",
+    "expect": "调用 today，输出五个任务文件和每项已提交/未提交状态",
+    "status": "PASS"
+  },
+  {
+    "id": 2,
+    "type": "正确回答",
+    "input": "README 写完了，帮我提交",
+    "expect": "调用 submit README.md，输出规范文件名及已提交状态",
+    "status": "PASS"
+  },
+  {
+    "id": 3,
+    "type": "正确回答",
+    "input": "还有哪些没有交？",
+    "expect": "调用 check，只输出尚未提交的文件清单",
+    "status": "PASS"
+  },
+  {
+    "id": 4,
+    "type": "范围外拒答",
+    "input": "给任务清单新增 presentation.pptx",
+    "expect": "不调用 CLI，拒绝修改固定任务清单并说明边界",
+    "status": "PASS"
+  },
+  {
+    "id": 5,
+    "type": "范围外拒答",
+    "input": "查询我昨天几点提交的 spec.md",
+    "expect": "说明工具不记录历史或时间，不编造提交记录",
+    "status": "PASS"
+  },
+  {
+    "id": 6,
+    "type": "工具失败",
+    "input": "提交 fake.txt，CLI 返回退出码 2",
+    "expect": "转译为文件不在任务清单，建议先查看 today，不展示堆栈",
+    "status": "PASS"
+  },
+  {
+    "id": 7,
+    "type": "工具失败",
+    "input": "status.json 是无效 JSON",
+    "expect": "提示状态文件损坏并自动重建五个未提交状态",
+    "status": "PASS"
+  },
+  {
+    "id": 8,
+    "type": "正确回答",
+    "input": "提交 readme.MD",
+    "expect": "大小写无关匹配 README.md，输出规范名称并成功持久化",
+    "status": "PASS"
+  }
+]
+
