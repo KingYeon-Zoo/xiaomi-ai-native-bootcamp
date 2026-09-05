@@ -1,1 +1,0 @@
-../docs/project1/spec.md
